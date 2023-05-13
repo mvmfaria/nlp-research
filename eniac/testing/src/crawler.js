@@ -39,7 +39,8 @@ async function crawl(home_link = DEFAULT_HOST, quant=0) {
             objectsList.push({url: link, textContent: links[i].textContent, imgsLinks: await fetchImgs(page)});
         }
       } catch(error) {
-        console.log(`Não foi possível acessar o link:', ${link}`)
+        // console.log(`Não foi possível acessar o link:', ${link}`)
+        console.log(error)
       }
 
       console.log(`${i}/${quant}`)
@@ -49,7 +50,8 @@ async function crawl(home_link = DEFAULT_HOST, quant=0) {
     
     //Salvar arquivo.json no diretório.
     let fileName = 'wikipedia'
-    writeFileSync(`./testing/database/${fileName}.json`, JSON.stringify(objectsList, null, " "));
+    generateId(objectsList, 0)
+    writeFileSync(`./eniac/testing/database/${fileName}.json`, JSON.stringify(objectsList, null, " "));
   }
 }
 
@@ -74,10 +76,19 @@ async function fetchImgs(link) {
       return {
         imgUrl: img.src,
         imgAlt: img.alt,
-        id: null
+        imgId: null
       }
     }));
 }
+
+function generateId(objList, id) {
+  for (let obj of objList) {
+    for (let img of obj.imgsLinks) {
+      img.imgId = id++
+    }
+  }
+}
+
 
 //Parâmetros para o método crawl(PaginaPrincipal, quantidadeDePaginasQueSeraoExtraidas).
 crawl(DEFAULT_HOST, 50)

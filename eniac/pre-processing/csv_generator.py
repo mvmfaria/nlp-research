@@ -16,16 +16,22 @@ def removeExtensao(lista):
 
 # imgs = removeExtensao(retornaListaDeConteudoNoDiretorio("./crawler/data/data-img/akc"))
 # detection_result = removeExtensao(retornaListaDeConteudoNoDiretorio("./crawler/detection/akc/labels"))
-f = open('./eniac/training/database/dog.json', encoding="utf8")
-data = json.load(f)
+d = open('./eniac/training/database/dog.json', encoding="utf8")
+r = open('./eniac/training/database/random.json', encoding="utf8")
+dog = json.load(d)
+random = json.load(r)
 
-with open(f'./eniac/pre-processing/dog-dataset.csv', 'w', newline="", encoding="utf8") as file:
+with open(f'./eniac/pre-processing/training-dataset.csv', 'w', newline="", encoding="utf8") as file:
     writer = csv.writer(file)
-    field = ["url", "title", "paragraph"]
+    field = ["text", "isdog"]
     writer.writerow(field)
 
-    for obj in data:
-        url = obj['url'].replace("\n", "")
-        title = obj['title'].replace("\n", "")
-        paragraph = obj['paragraph'].replace("\n", "")
-        writer.writerow([url, title, paragraph])
+    for obj in dog:
+        text = obj['paragraph'].replace("\n", "")
+        isdog = 1
+        writer.writerow([text, isdog])
+    
+    for obj in random:
+        text = obj['paragraph'].replace("\n", "")
+        isdog = 0
+        writer.writerow([text, isdog])

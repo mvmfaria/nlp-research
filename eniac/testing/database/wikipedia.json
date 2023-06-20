@@ -15,22 +15,26 @@
    {
     "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Judy_Ann_Santos_%282008%29.jpg/114px-Judy_Ann_Santos_%282008%29.jpg",
     "imgAlt": "Judy Ann Santos",
-    "imgId": 0
+    "imgId": 0,
+    "isdog": 0
    },
    {
     "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sluishuis.jpg/162px-Sluishuis.jpg",
     "imgAlt": "Sluishuis",
-    "imgId": 1
+    "imgId": 1,
+    "isdog": 0
    },
    {
     "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Waving_from_Buckingham_Palace_Balcony_%2852877352018%29_%28cropped%29.jpg/178px-Waving_from_Buckingham_Palace_Balcony_%2852877352018%29_%28cropped%29.jpg",
     "imgAlt": "King Charles III and Queen Camilla",
-    "imgId": 2
+    "imgId": 2,
+    "isdog": 0
    },
    {
     "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Jingangjing.jpg/167px-Jingangjing.jpg",
     "imgAlt": "Frontispiece of the Diamond Sutra",
-    "imgId": 3
+    "imgId": 3,
+    "isdog": 0
    },
    {
     "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pinnularia_major.jpg/350px-Pinnularia_major.jpg",

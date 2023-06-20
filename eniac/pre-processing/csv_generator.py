@@ -16,12 +16,12 @@ def removeExtensao(lista):
 
 # imgs = removeExtensao(retornaListaDeConteudoNoDiretorio("./crawler/data/data-img/akc"))
 # detection_result = removeExtensao(retornaListaDeConteudoNoDiretorio("./crawler/detection/akc/labels"))
-d = open('./eniac/training/database/dog.json', encoding="utf8")
-r = open('./eniac/training/database/random.json', encoding="utf8")
+d = open('./training/database/dog.json', encoding="utf8")
+r = open('./training/database/random.json', encoding="utf8")
 dog = json.load(d)
 random = json.load(r)
 
-with open(f'./eniac/pre-processing/training-dataset.csv', 'w', newline="", encoding="utf8") as file:
+with open(f'./pre-processing/training-dataset.csv', 'w', newline="", encoding="utf8") as file:
     writer = csv.writer(file)
     field = ["text", "isdog"]
     writer.writerow(field)

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^20.1.2",
+    "robots-parser": "^3.0.1",
     "robots-txt-parser": "^2.0.3"
   }
 }
